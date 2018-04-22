@@ -1,3 +1,10 @@
+# Wordpress folders
+wordpress/*
+!wordpress/wp-content
+
+# Private Project files
+design
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
