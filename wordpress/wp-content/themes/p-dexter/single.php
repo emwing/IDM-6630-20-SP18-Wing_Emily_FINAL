@@ -2,10 +2,13 @@
 
 <?php define( 'WP_USE_THEMES', false ); get_header(); ?>
 
-<div>
-  <?php get_template_part('loop'); ?>
-</div>
+</header>
 
-<?php get_footer(); ?>
+<?php
+
+  get_template_part("loop-single");
+
+  get_footer();
+?>
 
 <!--  <?php echo "END OF " . basename(__FILE__); ?> -->
