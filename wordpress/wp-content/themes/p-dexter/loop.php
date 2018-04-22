@@ -6,15 +6,13 @@
     <div <?php post_class(); ?> >
 
         <a href="<?php the_permalink(); ?>">
-
           <?php the_post_thumbnail(); ?>
-
         </a>
 
     </div>
 
   <?php endwhile; else : ?>
-    <p><?php esc_html_e( 'Sorry, the pokedex is empty.' ); ?></p>
+    <p><?php esc_html_e( 'Whoops, something went wrong.' ); ?></p>
   <?php endif; ?>
 
 </main>
