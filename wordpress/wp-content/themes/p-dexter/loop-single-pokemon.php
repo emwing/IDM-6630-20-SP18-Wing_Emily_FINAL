@@ -1,5 +1,3 @@
-<!-- display certain information from single generic post (single.php) -->
-
 <!--  <?php echo basename(__FILE__); ?> -->
 <main>
 
@@ -8,6 +6,8 @@
     <div <?php post_class(); ?> >
 
       <h2><?php the_title(); ?></h2>
+
+      <?php the_field('official_art'); ?>
 
       <?php the_content(); ?>
 

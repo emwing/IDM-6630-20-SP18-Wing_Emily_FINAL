@@ -29,9 +29,16 @@ h2 {
   text-transform: uppercase;
 }
 
-/* .pageWrap {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-} */
+
+/* homepage controls */
+.home {
+  background-color: green;
+}
+.home .pageWrap {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home header {
+  height: 80vh;
+}

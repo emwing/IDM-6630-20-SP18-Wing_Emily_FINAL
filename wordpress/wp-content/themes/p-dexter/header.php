@@ -13,7 +13,14 @@
 
       <header>
         <h1><?php echo get_bloginfo('name'); ?></h1>
-        <h2>Legends</h2>
+        <h2><a href="/WING-Emily-WORDPRESS/wordpress/">Legends</a></h2>
       </header>
+
+      <nav>
+        <ul>
+          <li><a href="/WING-Emily-WORDPRESS/wordpress/pokedex/">Pokedex</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
 
       <!--  <?php echo "END OF " . basename(__FILE__); ?> -->

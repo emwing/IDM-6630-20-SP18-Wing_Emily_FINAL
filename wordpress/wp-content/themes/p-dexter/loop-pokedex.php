@@ -4,7 +4,8 @@
   <?php
     $pokemon_post_type_query = array(
       'post_type' => 'pokemon',
-      'post_status' => 'publish'
+      'post_status' => 'publish',
+      'posts_per_page' => -1
     );
 
     $get_pokemon = new WP_Query( $pokemon_post_type_query );
