@@ -4,7 +4,20 @@
 
 <?php define( 'WP_USE_THEMES', false ); get_header(); ?>
 
-<?php get_template_part('loop-pokedex'); ?>
+<nav>
+  <?php wp_nav_menu ( array(
+    'theme_location' => 'side-menu',
+    'link_after' => '<span></span><span></span>'
+  ) ); ?>
+</nav>
+
+<div class="filters">
+  <p>test</p>
+</div>
+
+<div class="postContainer">
+  <?php get_template_part('loop-pokedex'); ?>
+</div>
 
 <?php get_footer(); ?>
 

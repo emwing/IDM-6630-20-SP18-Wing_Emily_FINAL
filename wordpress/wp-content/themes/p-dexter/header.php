@@ -13,14 +13,10 @@
 
       <header>
         <h1><?php echo get_bloginfo('name'); ?></h1>
-        <h2><a href="/WING-Emily-WORDPRESS/wordpress/">Legends</a></h2>
-      </header>
 
-      <nav>
-        <ul>
-          <li><a href="/WING-Emily-WORDPRESS/wordpress/pokedex/">Pokedex</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+        <img id="heroImg" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+
+        <h2><?php echo get_bloginfo('description'); ?></h2> <!-- appearance > customize > site identity > tagline -->
+      </header>
 
       <!--  <?php echo "END OF " . basename(__FILE__); ?> -->

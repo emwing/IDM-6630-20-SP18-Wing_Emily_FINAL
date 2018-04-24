@@ -1,44 +1,265 @@
 /* resets and general appearance controls */
-* {
-  margin: 0;
-  padding: 0;
-}
-html {
-  /* background-color: #000;
-  color: #fff; */
-  font-size: 16px;
-  line-height: 1.375;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after { box-sizing: inherit; }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.375;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after { box-sizing: inherit; }
 
-svg,
-img {
-  max-width: 100%;
-  image-rendering: -webkit-optimize-contrast; /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */
-}
+  svg,
+  img {
+    max-width: 100%;
+    image-rendering: -webkit-optimize-contrast; /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */
+  }
+
 
 /* general controls */
-h1 { visibility: hidden; }
+  h1 { visibility: hidden; }
 
-h2 {
-  font-size: 2rem;
-  font-family: 'Orbitron', Courier, sans-serif;
-  text-transform: uppercase;
-}
+  h2 {
+    font-size: 2rem;
+    font-family: 'Orbitron', Courier, sans-serif;
+    text-transform: uppercase;
+  }
+
+  a { text-decoration: none; }
+
+  nav ul { list-style: none; }
 
 
 /* homepage controls */
-.home {
-  background-color: green;
-}
-.home .pageWrap {
-  margin: 0 auto;
-  text-align: center;
-}
+  .home .pageWrap { /* grid container */
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 1rem;
+    height: 95vh;
+  }
+  .home header { /* grid item 1: header */
+    position: relative;
+    max-height: 80vh;
+    border: 1px solid white;
+  }
+    .home #heroImg {
+      display: inline-block;
+      max-width: 70%;
+      height: auto;
+    }
+    .home h2 {
+      font-weight: 400;
+      font-size: 7rem;
+    }
+  .home nav { align-self: start; } /* grid item 2: nav */
 
-.home header {
-  height: 80vh;
-}
+  /* grid item 3: footer */
+
+
+/* top-link appearance controls */
+  .home nav a {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    max-width: 50%;
+    position: relative;
+    display: block;
+    background-color: #ffcb05;
+    border: 0.5rem solid white;
+    border-radius: 3.5rem;
+    font-size: 2rem;
+    color: #000;
+    text-transform: uppercase;
+  }
+
+
+/* hover effects top-left */
+  .home nav a span:first-child:before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border-top: 0.5rem solid #ffcb05;
+    border-left: 0.5rem solid #ffcb05;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  .home nav a:hover span:first-child:before {
+    top: -2rem;
+    left: -2rem;
+    opacity: 1;
+  }
+
+/* hover effects top-right */
+  .home nav a span:first-child:after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border-top: 0.5rem solid #ffcb05;
+    border-right: 0.5rem solid #ffcb05;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  .home nav a:hover span:first-child:after {
+    top: -2rem;
+    right: -2rem;
+    opacity: 1;
+  }
+
+/* hover effects bottom-left */
+  .home nav a span:last-child:before {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border-bottom: 0.5rem solid #ffcb05;
+    border-left: 0.5rem solid #ffcb05;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  .home nav a:hover span:last-child:before {
+    bottom: -2rem;
+    left: -2rem;
+    opacity: 1;
+  }
+
+/* hover effects bottom-right */
+  .home nav a span:last-child:after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border-bottom: 0.5rem solid #ffcb05;
+    border-right: 0.5rem solid #ffcb05;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  .home nav a:hover span:last-child:after {
+    bottom: -2rem;
+    right: -2rem;
+    opacity: 1;
+  }
+
+
+
+/* page appearance controls */
+  .page .pageWrap { /* grid container */
+    margin: 0;
+    min-height: 95vh;
+    display: grid;
+    grid-template-rows: 2fr repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr 7fr;
+    grid-template-areas:
+      "header filters pokemon"
+      "side-menu filters pokemon"
+      "footer filters pokemon";
+    justify-items: center;
+    text-align: center;
+    border: 1px solid orange;
+  }
+
+  /* column 1 */
+    .page header { /* grid item span 2 rows */
+      padding: 0.5rem 1rem;
+      position: relative;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      align-self: end;
+    }
+      .page #heroImg {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+      }
+      .page h2 {
+        font-weight: 400;
+        font-size: 2rem;
+      }
+    .page nav { /* grid item span 2 rows */
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      align-self: center;
+      padding: 0.5rem 1rem;
+      position: relative;
+      width: 100%;
+      text-align: left;
+    }
+      /* side-menu controls */
+        .page nav ul {
+          width: 100%;
+          height: auto;
+          background-color: #ffcb05;
+          border: 0.25rem solid white;
+          border-radius: 2rem;
+          font-size: 1.5rem;
+          color: #000;
+          text-transform: uppercase;
+        }
+        .page nav li {
+          position: relative;
+          padding: 1rem 1rem 1rem 3rem;
+        }
+        .page nav li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+    .page footer { /* grid item span 1 row */
+      grid-row: 3 / -1;
+      grid-column: 1 / 2;
+      align-self: end;
+    }
+
+  /* column 2 */
+    .page .filters { /* grid item span all rows */
+        background-color: #ffcb05;
+        width: 100%;
+        grid-row: 1 / -1;
+        grid-column: 2 / 3;
+      }
+
+
+  /* column 3 */
+    .postContainer { /* grid item containing a grid */
+      grid-row: 1 / -1;
+      grid-column: 3 / -1;
+      align-self: center;
+
+      padding: 0 1rem;
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(10, auto);
+      grid-gap: 0.5rem;
+      align-content: space-evenly;
+      justify-items: center;
+      align-items: center;
+      background-color: #ccc;
+    }
+      /* pokemon post grid item controls */
+        .pokemon img {
+          width: 100%;
+          height: auto;
+        }

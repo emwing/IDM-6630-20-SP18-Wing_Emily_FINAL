@@ -1,5 +1,4 @@
 <!--  <?php echo basename(__FILE__); ?> -->
-<main>
 
   <?php
     $pokemon_post_type_query = array(
@@ -25,5 +24,4 @@
     <p><?php esc_html_e( 'Sorry, the pokedex is empty.' ); ?></p>
   <?php endif; ?>
 
-</main>
 <!--  <?php echo "END OF " . basename(__FILE__); ?> -->
