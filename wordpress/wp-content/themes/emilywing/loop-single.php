@@ -7,7 +7,7 @@
 
       <h2><?php the_title(); ?></h2>
 
-      <?php the_field('official_art'); ?>
+      <h3>Author: <?php the_author(); ?></h3>
 
       <?php the_content(); ?>
 

@@ -2,15 +2,28 @@
 
 // custom posts in wp admin
   function create_pokemon_post_type() {
-    $labels = array(
-      'name' => _x( 'Pokemon', 'post type general name' )
+    $labels = array( // wp admin ui label in dashboard menu
+      'name'                 => _x( 'Pokémon', 'post type general name' ),
+      'singular_name'        => _x( 'Pokémon', 'post type singular name' ),
+      'add_new'              => _x( 'Add New', 'pokemon' ),
+      'add_new_item'         => 'Add New Pokémon',
+      'edit_item'            => 'Edit Pokémon',
+      'new_item'             => 'New Pokémon',
+      'all_items'            => 'All Pokémon',
+      'view_item'            => 'View Pokémon',
+      'search_items'         => 'Search Pokémon',
+      'not_found'            => 'No Pokémon Found',
+      'not_found_in_trash'   => 'No Pokémon Found in the Trash',
+      'parent_item_colon'    => '',
+      'menu_name'            => 'Pokémon'
     );
 
-    $args = array(
+    $args = array( // wp admin ui customize dashboard menu
       'labels' => $labels,
       'menu_position' => 5,
       'supports' => array( 'title', 'thumbnail' ),
-      'public' => true
+      'public' => true,
+      'taxonomies' => array( 'category' )
     );
 
     register_post_type( 'pokemon', $args );
@@ -59,6 +72,7 @@
     register_nav_menus( array(
       'home-menu' => 'Home Navigation',
       'side-menu' => 'Side Navigation',
+      'error-menu' => 'Error Navigation',
       'footer-menu' => 'Footer Navigation'
     ) );
   }
@@ -91,7 +105,17 @@
 
 
 // remove admin bar from page
-  // add_filter( 'show_admin_bar', '__return_false');
+  add_filter( 'show_admin_bar', '__return_false');
 /////////////////////////////
+
+
+// enable upload svgs
+  function add_file_types_to_uploads($file_types) {
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes );
+    return $file_types;
+  }
+  add_action('upload_mimes', 'add_file_types_to_uploads');
 
 ?>

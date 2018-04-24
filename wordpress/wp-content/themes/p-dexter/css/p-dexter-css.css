@@ -25,10 +25,13 @@
 /* general controls */
   h1 { visibility: hidden; }
 
-  h2 {
-    font-size: 2rem;
+  h2 { font-size: 2rem; }
+
+  h2, h3, h4, h5 {
     font-family: 'Orbitron', Courier, sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.125rem;
   }
 
   a { text-decoration: none; }
@@ -37,6 +40,7 @@
 
 
 /* homepage controls */
+  .uh-oh .pageWrap,
   .home .pageWrap { /* grid container */
     margin: 0 auto;
     text-align: center;
@@ -44,28 +48,37 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-gap: 1rem;
-    height: 95vh;
+    height: 100vh;
   }
+  .uh-oh header,
   .home header { /* grid item 1: header */
     position: relative;
     max-height: 80vh;
-    border: 1px solid white;
+    background: url("http://localhost/WING-Emily-WORDPRESS/wordpress/wp-content/uploads/2018/04/herobg.jpg");
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    animation: bk 20s -5s linear infinite;
+    transform: translateZ(0);
   }
+  @keyframes bk {
+    100% { background-position: 100% 0; }
+  }
+
+    .uh-oh #MissingNo,
     .home #heroImg {
       display: inline-block;
       max-width: 70%;
       height: auto;
     }
-    .home h2 {
-      font-weight: 400;
-      font-size: 7rem;
-    }
+    .home h2 { font-size: 7rem; }
+  .uh-oh nav,
   .home nav { align-self: start; } /* grid item 2: nav */
 
   /* grid item 3: footer */
 
 
 /* top-link appearance controls */
+  .uh-oh nav a,
   .home nav a {
     padding: 0.5rem;
     margin: 1rem auto;
@@ -82,6 +95,7 @@
 
 
 /* hover effects top-left */
+  .uh-oh nav a span:first-child:before,
   .home nav a span:first-child:before {
     content: '';
     position: absolute;
@@ -95,6 +109,7 @@
     transition: all .3s ease-out;
     opacity: 0;
   }
+  .uh-oh nav a:hover span:first-child:before,
   .home nav a:hover span:first-child:before {
     top: -2rem;
     left: -2rem;
@@ -102,6 +117,7 @@
   }
 
 /* hover effects top-right */
+  .uh-oh nav a span:first-child:after,
   .home nav a span:first-child:after {
     content: '';
     position: absolute;
@@ -115,6 +131,7 @@
     transition: all .3s ease-out;
     opacity: 0;
   }
+  .uh-oh nav a:hover span:first-child:after,
   .home nav a:hover span:first-child:after {
     top: -2rem;
     right: -2rem;
@@ -122,6 +139,7 @@
   }
 
 /* hover effects bottom-left */
+  .uh-oh nav a span:last-child:before,
   .home nav a span:last-child:before {
     content: '';
     position: absolute;
@@ -135,6 +153,7 @@
     transition: all .3s ease-out;
     opacity: 0;
   }
+  .uh-oh nav a:hover span:last-child:before,
   .home nav a:hover span:last-child:before {
     bottom: -2rem;
     left: -2rem;
@@ -142,6 +161,7 @@
   }
 
 /* hover effects bottom-right */
+  .uh-oh nav a span:last-child:after,
   .home nav a span:last-child:after {
     content: '';
     position: absolute;
@@ -155,6 +175,7 @@
     transition: all .3s ease-out;
     opacity: 0;
   }
+  .uh-oh nav a:hover span:last-child:after,
   .home nav a:hover span:last-child:after {
     bottom: -2rem;
     right: -2rem;
@@ -166,17 +187,16 @@
 /* page appearance controls */
   .page .pageWrap { /* grid container */
     margin: 0;
-    min-height: 95vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: 2fr repeat(2, 1fr);
-    grid-template-columns: 2fr 1fr 7fr;
+    grid-template-columns: 2fr 1fr 6fr;
     grid-template-areas:
       "header filters pokemon"
       "side-menu filters pokemon"
       "footer filters pokemon";
     justify-items: center;
     text-align: center;
-    border: 1px solid orange;
   }
 
   /* column 1 */
@@ -192,10 +212,7 @@
         max-width: 100%;
         height: auto;
       }
-      .page h2 {
-        font-weight: 400;
-        font-size: 2rem;
-      }
+      .page h2 { font-size: 2rem; }
     .page nav { /* grid item span 2 rows */
       grid-row: 2 / 3;
       grid-column: 1 / 2;
@@ -225,6 +242,25 @@
           width: 100%;
           height: 100%;
         }
+        .arrow {
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #c97932;
+          margin: 25px auto;
+          display: none;
+        }
+        .page nav a:hover:before {
+          margin-left: -2rem;
+          display: block;
+          position: relative;
+          top: 0;
+          width: 100%;
+          height: 0;
+          content : "\25ba";
+          color: black;
+        }
 
     .page footer { /* grid item span 1 row */
       grid-row: 3 / -1;
@@ -239,7 +275,6 @@
         grid-row: 1 / -1;
         grid-column: 2 / 3;
       }
-
 
   /* column 3 */
     .postContainer { /* grid item containing a grid */
@@ -263,3 +298,114 @@
           width: 100%;
           height: auto;
         }
+
+
+
+/* single pokemon post controls */
+  .single-pokemon .pageWrap { /* grid container */
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr 6fr;
+    grid-template-areas:
+      "header info pokemon"
+      "side-menu info pokemon"
+      "footer info pokemon";
+    justify-items: center;
+    align-content: start;
+    text-align: center;
+    overflow-y: hidden;
+    border: 1px solid green;
+  }
+
+  /* column 1 */
+    .single-pokemon header { /* grid item span 2 rows */
+      padding: 0.5rem 1rem;
+      position: relative;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      align-self: end;
+    }
+      .single-pokemon #heroImg {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+      }
+      .single-pokemon h2 { font-size: 2rem; }
+    .single-pokemon nav { /* grid item span 2 rows */
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      align-self: center;
+      padding: 0.5rem 1rem;
+      position: relative;
+      width: 100%;
+      text-align: left;
+    }
+      /* side-menu controls */
+        .single-pokemon nav ul {
+          width: 100%;
+          height: auto;
+          background-color: #ffcb05;
+          border: 0.25rem solid white;
+          border-radius: 2rem;
+          font-size: 1.5rem;
+          color: #000;
+          text-transform: uppercase;
+        }
+        .single-pokemon nav li {
+          position: relative;
+          padding: 1rem 1rem 1rem 3rem;
+        }
+        .single-pokemon nav li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+    .single-pokemon footer { /* grid item span 1 row */
+      grid-row: 3 / -1;
+      grid-column: 1 / 2;
+      align-self: end;
+    }
+
+  /* column 2 */
+    .single-pokemon .info { /* grid item span all rows */
+        padding: 1rem;
+        width: 100%;
+        grid-row: 1 / 4;
+        grid-column: 2 / 3;
+        background-color: #ffcb05;
+      }
+
+  /* column 3 */
+    .single-pokemon .type-pokemon { /* grid item containing a grid */
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid lime;
+      grid-row: 1 / -1;
+      grid-column: 3 / -1;
+      align-self: start;
+      overflow-y: auto;
+
+      /*
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(10, auto);
+      grid-gap: 0.5rem;
+      align-content: space-evenly;
+      justify-items: center;
+      align-items: center;
+      background-color: #ccc; */
+    }
+
+    .type-pokemon p {
+      margin: 0.5rem auto;
+      max-width: 35rem;
+    }
+    .single-pokemon-img {
+      margin: 0 auto;
+      max-width: 60%;
+      display: block;
+    }
