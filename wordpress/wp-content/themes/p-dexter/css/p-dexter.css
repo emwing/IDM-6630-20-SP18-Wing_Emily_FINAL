@@ -1,0 +1,559 @@
+/* resets and general appearance controls */
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.375;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+svg,
+img {
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */ }
+
+/* general controls */
+h1 {
+  height: 0;
+  visibility: hidden; }
+
+h2 {
+  font-size: 1.5rem; }
+  @media screen and (min-width: 769px) {
+    h2 {
+      font-size: 2rem; } }
+
+h3 {
+  margin: 0.5rem 0.25rem;
+  font-size: 1rem; }
+  @media screen and (min-width: 769px) {
+    h3 {
+      font-size: 1.25rem; } }
+
+h2, h3, h4, h5 {
+  font-family: "Orbitron", Courier, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem; }
+
+a {
+  text-decoration: none; }
+
+nav ul {
+  list-style: none; }
+
+/* homepage controls */
+.uh-oh .pageWrap,
+.home .pageWrap {
+  /* grid container */
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60vh 1fr auto;
+  grid-gap: 1rem;
+  min-height: 100vh; }
+  @media screen and (min-width: 400px) {
+    .uh-oh .pageWrap,
+    .home .pageWrap {
+      grid-template-rows: 70vh 1fr auto; } }
+
+.uh-oh header,
+.home header {
+  /* grid item 1: header */
+  display: grid;
+  justify-items: center;
+  grid-gap: 0;
+  background: url("http://localhost/WING-Emily-WORDPRESS/wordpress/wp-content/uploads/2018/04/herobg.jpg");
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: contain;
+  animation: bk 20s -5s linear infinite;
+  transform: translateZ(0); }
+
+@keyframes bk {
+  100% {
+    background-position: 100% 0; } }
+.uh-oh #MissingNo,
+.home #heroImg {
+  align-self: end;
+  height: auto;
+  max-width: 90%; }
+  @media screen and (min-width: 769px) {
+    .uh-oh #MissingNo,
+    .home #heroImg {
+      max-width: 80%; } }
+  @media screen and (min-width: 1440px) {
+    .uh-oh #MissingNo,
+    .home #heroImg {
+      max-width: 70%; } }
+
+.home h2 {
+  align-self: flex-start;
+  font-size: 2rem; }
+  @media screen and (min-width: 400px) {
+    .home h2 {
+      font-size: 3.5rem; } }
+  @media screen and (min-width: 769px) {
+    .home h2 {
+      font-size: 5.5rem; } }
+  @media screen and (min-width: 1024px) {
+    .home h2 {
+      font-size: 7rem; } }
+
+/* grid item 2: nav */
+.uh-oh nav,
+.home nav {
+  align-self: start; }
+
+/* grid item 3: footer */
+.home footer {
+  align-self: end; }
+
+/* top-link appearance controls */
+.uh-oh nav a,
+.home nav a {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  max-width: 75%;
+  position: relative;
+  display: block;
+  background-color: #ffcb05;
+  border: 0.25rem solid #ffffff;
+  border-radius: 3.5rem;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem; }
+  @media screen and (min-width: 400px) {
+    .uh-oh nav a,
+    .home nav a {
+      max-width: 70%;
+      border: 0.5rem solid white;
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 769px) {
+    .uh-oh nav a,
+    .home nav a {
+      max-width: 50%;
+      font-size: 2rem;
+      margin: 2rem auto 1rem; } }
+
+/* hover effects top-left */
+.uh-oh nav a span:first-child:before,
+.home nav a span:first-child:before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-top: 0.5rem solid #ffcb05;
+  border-left: 0.5rem solid #ffcb05;
+  transition: all .3s ease-out;
+  opacity: 0; }
+
+.uh-oh nav a:hover span:first-child:before,
+.home nav a:hover span:first-child:before {
+  top: -2rem;
+  left: -2rem;
+  opacity: 1; }
+
+/* hover effects top-right */
+.uh-oh nav a span:first-child:after,
+.home nav a span:first-child:after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-top: 0.5rem solid #ffcb05;
+  border-right: 0.5rem solid #ffcb05;
+  transition: all .3s ease-out;
+  opacity: 0; }
+
+.uh-oh nav a:hover span:first-child:after,
+.home nav a:hover span:first-child:after {
+  top: -2rem;
+  right: -2rem;
+  opacity: 1; }
+
+/* hover effects bottom-left */
+.uh-oh nav a span:last-child:before,
+.home nav a span:last-child:before {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-bottom: 0.5rem solid #ffcb05;
+  border-left: 0.5rem solid #ffcb05;
+  transition: all .3s ease-out;
+  opacity: 0; }
+
+.uh-oh nav a:hover span:last-child:before,
+.home nav a:hover span:last-child:before {
+  bottom: -2rem;
+  left: -2rem;
+  opacity: 1; }
+
+/* hover effects bottom-right */
+.uh-oh nav a span:last-child:after,
+.home nav a span:last-child:after {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border-bottom: 0.5rem solid #ffcb05;
+  border-right: 0.5rem solid #ffcb05;
+  transition: all .3s ease-out;
+  opacity: 0; }
+
+.uh-oh nav a:hover span:last-child:after,
+.home nav a:hover span:last-child:after {
+  bottom: -2rem;
+  right: -2rem;
+  opacity: 1; }
+
+.bugFilter {
+  background-color: #A8b820; }
+
+.darkFilter {
+  background-color: #705848; }
+
+.dragonFilter {
+  background-color: #7038F8; }
+
+.electricFilter {
+  background-color: #F8D030; }
+
+.fairyFilter {
+  background-color: #E280E2; }
+
+.fightingFilter {
+  background-color: #C03028; }
+
+.fireFilter {
+  background-color: #F08030; }
+
+.flyingFilter {
+  background-color: #A890F0; }
+
+.ghostFilter {
+  background-color: #705898; }
+
+.grassFilter {
+  background-color: #78C850; }
+
+.groundFilter {
+  background-color: #E0C068; }
+
+.iceFilter {
+  background-color: #98D8D8; }
+
+.normalFilter {
+  background-color: #8A8A59; }
+
+.poisonFilter {
+  background-color: #A040A0; }
+
+.psychicFilter {
+  background-color: #F85888; }
+
+.rockFilter {
+  background-color: #B8A038; }
+
+.steelFilter {
+  background-color: #B8B8D0; }
+
+.waterFilter {
+  background-color: #6890F0; }
+
+/* pokedex page appearance controls */
+.page .pageWrap {
+  margin: 0;
+  text-align: center; }
+  @media screen and (min-width: 769px) {
+    .page .pageWrap {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 2fr repeat(2, 1fr);
+      grid-template-columns: 2fr 1fr 6fr;
+      grid-template-areas: "header filters pokemon" "side-menu filters pokemon" "footer filters pokemon";
+      justify-items: center; } }
+
+.page header {
+  padding: 0.5rem 1rem;
+  position: relative;
+  width: 100%; }
+  @media screen and (min-width: 769px) {
+    .page header {
+      /* grid item column 1 */
+      position: fixed;
+      min-width: 225px;
+      width: 20%;
+      top: 20%;
+      left: 0; } }
+
+.page #heroImg {
+  display: inline-block;
+  max-width: 85%;
+  height: auto; }
+  @media screen and (min-width: 769px) {
+    .page #heroImg {
+      max-width: 100%; } }
+
+.page nav {
+  position: relative;
+  width: 100%; }
+  @media screen and (min-width: 769px) {
+    .page nav {
+      /* grid item column 1 */
+      position: fixed;
+      min-width: 225px;
+      width: 20%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      padding: 0.5rem 1rem;
+      text-align: left; } }
+
+/* side-menu controls */
+.single-pokemon nav ul,
+.page nav ul {
+  width: 100%;
+  height: auto; }
+  @media screen and (min-width: 769px) {
+    .single-pokemon nav ul,
+    .page nav ul {
+      background-color: #ffcb05;
+      border: 0.25rem solid #ffffff;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      color: #000000;
+      text-transform: uppercase; } }
+
+.single-pokemon nav li,
+.page nav li {
+  position: relative; }
+  @media screen and (min-width: 769px) {
+    .single-pokemon nav li,
+    .page nav li {
+      padding: 1rem 1rem 1rem 3rem; } }
+
+.single-pokemon nav li a,
+.page nav li a {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #000000;
+  margin: 25px auto;
+  display: none; }
+
+.single-pokemon nav a:hover:before,
+.page nav a:hover:before {
+  margin-left: -2rem;
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 0;
+  content: "\25ba";
+  color: #000000; }
+
+.page footer {
+  /* grid item span 1 row */
+  grid-row: 3 / -1;
+  grid-column: 1 / 2;
+  align-self: end;
+  min-width: 225px; }
+
+/* column 2 */
+.page .filters {
+  /* grid item span all rows */
+  padding: 0.5rem 0.25rem;
+  background-color: #ffcb05;
+  width: 100%; }
+  @media screen and (min-width: 769px) {
+    .page .filters {
+      grid-row: 1 / -1;
+      grid-column: 2 / 3; } }
+
+.filters input {
+  /* hides default checkbox */
+  display: none;
+  visibility: hidden; }
+
+.typeBox {
+  border: 1px solid #000000;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  display: inline-block;
+  width: 4.75rem;
+  text-transform: uppercase;
+  font-size: 0.75rem; }
+
+/* column 3 */
+.postContainer {
+  /* grid item containing a grid */
+  padding: 0 1rem;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center; }
+  @media screen and (min-width: 769px) {
+    .postContainer {
+      grid-row: 1 / 3;
+      grid-column: 3 / -1;
+      align-self: center;
+      width: 100%; } }
+  @media screen and (min-width: 1024px) {
+    .postContainer {
+      grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)); } }
+  @media screen and (min-width: 1440px) {
+    .postContainer {
+      grid-row: 1 / -1;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(10, 1fr);
+      align-content: space-evenly; } }
+
+/* pokemon post grid item controls */
+.pokemon img {
+  width: 100%;
+  height: auto; }
+
+/* single pokemon post controls */
+.single-pokemon .pageWrap {
+  /* grid container */
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 6fr;
+  grid-template-areas: "header info pokemon" "side-menu info pokemon" "footer info pokemon";
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+  align-content: start;
+  text-align: center;
+  /* overflow-y: hidden; */
+  border: 1px solid green; }
+
+/* column 1 */
+.single-pokemon header {
+  /* grid item span 2 rows */
+  padding: 0.5rem 1rem;
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  align-self: end; }
+
+.single-pokemon #heroImg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto; }
+
+/* .single-pokemon h2 { font-size: 2rem; } */
+.single-pokemon nav {
+  /* grid item span 2 rows */
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+  width: 100%;
+  text-align: left; }
+
+/* side-menu controls */
+.single-pokemon nav ul {
+  width: 100%;
+  height: auto;
+  background-color: #ffcb05;
+  border: 0.25rem solid white;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  color: #000;
+  text-transform: uppercase; }
+
+.single-pokemon nav li {
+  position: relative;
+  padding: 1rem 1rem 1rem 3rem; }
+
+.single-pokemon nav li a {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.single-pokemon footer {
+  /* grid item span 1 row */
+  grid-row: 4 / -1;
+  grid-column: 1 / 2;
+  align-self: end; }
+
+/* column 2 */
+.single-pokemon .info {
+  /* grid item span all rows */
+  padding: 1rem;
+  width: 100%;
+  grid-row: 1 / -1;
+  grid-column: 2 / 3;
+  background-color: #ffcb05; }
+
+/* column 3 */
+.single-pokemon .type-pokemon {
+  /* grid item containing a grid */
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid lime;
+  grid-row: 1 / -1;
+  grid-column: 3 / -1;
+  align-self: start;
+  overflow-y: auto;
+  /*
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(10, auto);
+  grid-gap: 0.5rem;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  background-color: #ccc; */ }
+
+.type-pokemon p {
+  margin: 0.5rem auto;
+  max-width: 35rem; }
+
+.single-pokemon-img {
+  margin: 0 auto;
+  max-width: 60%;
+  display: block; }
+
+/*# sourceMappingURL=p-dexter.css.map */
