@@ -1,17 +1,13 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
 
-  // filter pokedex based on pokemon type
-  // $('#bugCB').click(function() {
-  //   var $name = $(this).attr("name");
-  //   var $post = $('.pokemon');
-
-    // if( $(this).is(':checked')) {
-      alert('yay');
-      // $("#ProjectListButton").show();
-    // } else {
-      // alert('boo');
-      // $("#ProjectListButton").hide();
-    // }
-  // });
+  function filterPKM() {
+    var type = jQuery(':checkbox:checked').map(function() {
+      return this.value;
+    }).get();
+    var goodType = type.join(",");
+    jQuery(".pokemon").hide().filter(goodType).show();
+  }
+  filterPKM();
+  jQuery(":checkbox").change(filterPKM);
 
 } ); // ends document ready
