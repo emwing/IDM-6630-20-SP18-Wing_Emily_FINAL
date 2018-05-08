@@ -20,11 +20,11 @@
   ?>
 
     <div <?php post_class( $classArray ); ?> >  <!-- put the array of types and generation as part of the post's classes -->
-
+      <div class="effects">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
           <?php the_post_thumbnail(); ?>
         </a>
-
+      </div>
     </div>
 
   <?php endwhile; else : ?>

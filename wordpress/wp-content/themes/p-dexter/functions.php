@@ -92,7 +92,8 @@
 
 // add js
   function my_theme_scripts() {
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), null, true );
+    wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'main' );
   }
   add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 /////////////////////////////
@@ -101,11 +102,11 @@
 // using variables for classes means can run if statements!
   function customBodyClasses($classes) {
     if (is_page()) {
-      $classes[] = 'pkmThumb';
+      $classes[] = 'splitLayout';
     }
-    $classes[] = 'one'; // $classes as array
-    $classes[] = 'two';
-    $classes[] = 'three';
+    if (is_singular('pokemon')) {
+      $classes[] = 'splitLayout';
+    }
     return $classes;
   }
   add_filter( 'body_class', 'customBodyClasses' ); // add custom classes to body_class via "customBodyClasses" function
