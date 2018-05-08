@@ -3,7 +3,7 @@
         <p>&copy;2018 Emily Wing</p>
       </footer>
 
-      <? wp_footer(); ?>
+      <?php wp_footer(); ?>
     </div> <!-- ends .pageWrap -->
   </body>
 </html>

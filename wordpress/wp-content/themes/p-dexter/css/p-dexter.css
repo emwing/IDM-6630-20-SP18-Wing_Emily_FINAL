@@ -225,10 +225,9 @@ label {
   display: grid;
   justify-items: center;
   grid-gap: 0;
-  background: url("http://localhost/WING-Emily-WORDPRESS/wordpress/wp-content/uploads/2018/05/pattern.png");
+  background: url("https://ewing.studio.mcad.edu/webdev3/final/wp-content/uploads/2018/05/pattern-1.png");
   background-position: 0 0;
-  background-repeat: repeat-x;
-  background-size: contain;
+  background-repeat: repeat;
   animation: bk 20s -5s linear infinite;
   transform: translateZ(0); }
 
@@ -252,14 +251,14 @@ label {
 .home h2 {
   align-self: flex-start;
   font-size: 2rem;
-  color: #ffcb05;
-  text-shadow: -0.25rem -0.25rem 0 #3564ae, 0.25rem -0.25rem 0 #3564ae, -0.25rem 0.25rem 0 #3564ae, 0.25rem 0.25rem 0 #3564ae; }
+  color: #ffcb05; }
   @media screen and (min-width: 400px) {
     .home h2 {
       font-size: 3.5rem; } }
   @media screen and (min-width: 769px) {
     .home h2 {
-      font-size: 5.5rem; } }
+      font-size: 5.5rem;
+      text-shadow: -0.25rem -0.25rem 0 #3564ae, 0.25rem -0.25rem 0 #3564ae, -0.25rem 0.25rem 0 #3564ae, 0.25rem 0.25rem 0 #3564ae; } }
   @media screen and (min-width: 1024px) {
     .home h2 {
       font-size: 7rem; } }
@@ -690,10 +689,9 @@ label {
 
 .pokemonImg {
   padding: 1rem 0;
-  background: url("http://localhost/WING-Emily-WORDPRESS/wordpress/wp-content/uploads/2018/05/pattern.png");
+  background: url("https://ewing.studio.mcad.edu/webdev3/final/wp-content/uploads/2018/05/pattern-1.png");
   background-position: 0 0;
-  background-repeat: repeat-x;
-  background-size: contain;
+  background-repeat: repeat;
   animation: bk 20s -5s linear infinite;
   transform: translateZ(0); }
   @media screen and (min-width: 769px) {
