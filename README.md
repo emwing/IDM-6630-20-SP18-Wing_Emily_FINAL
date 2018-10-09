@@ -1,4 +1,4 @@
-IDM-6660-20-SP18-Wing-Emily-final-project
+IDM-6630-20-SP18-Wing-Emily-FINAL
 
 A repo for my Spring 2018 PHP & WordPress project.
 
